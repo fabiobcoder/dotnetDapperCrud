@@ -1,3 +1,4 @@
+using dotnetDapper.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dotnetDapper.Controllers;
@@ -6,8 +7,17 @@ namespace dotnetDapper.Controllers;
 
     public class FilmesController : ControllerBase
     {
-        [HttpGet]
-        public IActionResult Get(){
-            return Ok("Funcionando");
+    private readonly IFilmeRepository _repository;
+
+    public FilmesController(IFilmeRepository repository)
+    {
+        _.repository = repository;
+    }
+
+    [HttpGet]
+        public async Task<IActionResult> Get(){
+
+            var filmes = await _repository.BuscarFilesAsync();
+            return filmes.Any() ? Ok("Funcionando") : NoContent();
         }
     }
