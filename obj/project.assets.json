@@ -957,11 +957,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\source\\repos\\dotnetDapper\\dotnetDapper.csproj",
+      "projectUniqueName": "C:\\source\\repos\\dotnetDapper\\dotnetDapper.csproj",
       "projectName": "dotnetDapper",
-      "projectPath": "c:\\source\\repos\\dotnetDapper\\dotnetDapper.csproj",
+      "projectPath": "C:\\source\\repos\\dotnetDapper\\dotnetDapper.csproj",
       "packagesPath": "C:\\Users\\Fabio\\.nuget\\packages\\",
-      "outputPath": "c:\\source\\repos\\dotnetDapper\\obj\\",
+      "outputPath": "C:\\source\\repos\\dotnetDapper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -975,6 +975,7 @@
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

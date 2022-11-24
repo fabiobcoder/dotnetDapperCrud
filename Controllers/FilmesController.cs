@@ -11,13 +11,13 @@ namespace dotnetDapper.Controllers;
 
     public FilmesController(IFilmeRepository repository)
     {
-        _.repository = repository;
+        _repository = repository;
     }
 
     [HttpGet]
         public async Task<IActionResult> Get(){
 
             var filmes = await _repository.BuscarFilesAsync();
-            return filmes.Any() ? Ok("Funcionando") : NoContent();
+            return filmes.Any() ? Ok(filmes) : NoContent();
         }
     }

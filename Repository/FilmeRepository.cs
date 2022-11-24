@@ -12,7 +12,7 @@ public class FilmeRepository : IFilmeRepository
 
     public FilmeRepository(IConfiguration configuration)
     {
-        this._configuration = configuration;
+        _configuration = configuration;
         connectionString = _configuration.GetConnectionString("SqlConnection");
     }
     public async Task<IEnumerable<FilmeResponse>> BuscarFilesAsync()
