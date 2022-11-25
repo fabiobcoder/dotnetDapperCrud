@@ -1,6 +1,6 @@
 namespace dotnetDapper.Models;
 
-    public class FilmeResquest
+    public class FilmeRequest
     {
         public string Nome {get; set;}
         public int Ano {get; set;}
