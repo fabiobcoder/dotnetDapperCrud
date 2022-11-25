@@ -59,7 +59,7 @@ namespace dotnetDapper.Controllers;
 
         var filme = await _repository.BuscarFileAsync(id);
 
-        if (filme == null) NotFound("Filme não Existe!!!");
+        if (filme == null) return NotFound("Filme não Existe!!!");
 
         if (string.IsNullOrEmpty(request.Nome)) request.Nome = filme.Nome;
         if (request.Ano <= 0) request.Ano = filme.Ano;
@@ -71,5 +71,22 @@ namespace dotnetDapper.Controllers;
              : BadRequest("Erro ao Atualizar");
     }
 
+    [HttpDelete("id")]
+
+    public async Task<IActionResult> Delete(int id)
+    {
+        if (id <= 0) return BadRequest("Filme inválido");
+
+        var filme = await _repository.BuscarFileAsync(id);
+
+        if (filme == null) return NotFound("Filme não Existe!!!");
+
+        var deletado = await _repository.DeletarAsync(id);
+
+        return deletado
+             ? Ok("Filme Deletado com sucesso")
+             : BadRequest("Erro ao Deletar Filme");
+
+    }
     
     }

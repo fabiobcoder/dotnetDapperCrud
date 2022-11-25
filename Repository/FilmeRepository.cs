@@ -44,16 +44,16 @@ public class FilmeRepository : IFilmeRepository
             return await con.QueryFirstOrDefaultAsync<FilmeResponse>(sql, new { Id = id});
     }
 
-    public async Task<bool> AdicionaAsync(FilmeRequest resquest)
+    public async Task<bool> AdicionaAsync(FilmeRequest request)
     {
                 string sql = @"INSERT INTO tb_filme(nome,ano,id_produtora)
                                 VALUES (@Nome, @Ano, @ProdutoraId)";
 
         using var con = new SqlConnection(connectionString);
-            return await con.ExecuteAsync(sql, resquest) > 0 ;
+            return await con.ExecuteAsync(sql, request) > 0 ;
     }
 
-    public async Task<bool> AtualizarAsync(FilmeRequest resquest, int id)
+    public async Task<bool> AtualizarAsync(FilmeRequest request, int id)
     {
         string sql = @"UPDATE tb_filme SET
                         nome = @Nome,
@@ -61,17 +61,21 @@ public class FilmeRepository : IFilmeRepository
                         WHERE id = @Id";
         
         var parametros = new DynamicParameters();
-        parametros.Add("Ano", resquest.Ano);
-        parametros.Add("Nome", resquest.Nome);
+        parametros.Add("Ano", request.Ano);
+        parametros.Add("Nome", request.Nome);
         parametros.Add("Id", id);
 
         using var con = new SqlConnection(connectionString);
-            return await con.ExecuteAsync(sql, resquest) > 0 ;
+            return await con.ExecuteAsync(sql, parametros) > 0 ;
     }
 
 
-    public Task<bool> DeletarAsync(int id)
+    public async Task<bool> DeletarAsync(int id)
     {
-        throw new NotImplementedException();
+        string sql = @"DELETE FROM tb_filme               
+                        WHERE id = @Id";
+        
+        using var con = new SqlConnection(connectionString);
+            return await con.ExecuteAsync(sql, new { Id = id}) > 0 ;
     }
 }
