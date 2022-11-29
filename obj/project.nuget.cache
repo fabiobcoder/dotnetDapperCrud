@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KstkErn/5RgVQUhGh8/c2ztcYYV+UU82dGN7fr1m/S8M41xiNPO+OVlLIQWJE4q7wWhh8imgb06jiPloUNg5fA==",
+  "dgSpecHash": "++skW8r0cwXtJt6DEC1lCx8z1mSDWy6j8VxDHtTqWE8OD/4jBgjULBowEQjYLn22SeIVVZkbsl8HR00fbwp7Yg==",
   "success": true,
-  "projectFilePath": "C:\\source\\repos\\dotnetDapper\\dotnetDapper.csproj",
+  "projectFilePath": "c:\\source\\repos\\dotnetDapper\\dotnetDapper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Fabio\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Fabio\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.0\\microsoft.aspnetcore.openapi.7.0.0.nupkg.sha512",
